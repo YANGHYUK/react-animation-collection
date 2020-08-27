@@ -120,7 +120,7 @@ $img-url2: "https://images.unsplash.com/photo-1528785198459-ec50485704c7?ixlib=r
         height: 200px;
         background-image: url($img-url);
         background-size: 100% 100%;
-        filter: grayscale(100%);
+        filter: grayscale(100%) blur(2px);
       }
 
       .social {
@@ -195,10 +195,6 @@ $img-url2: "https://images.unsplash.com/photo-1528785198459-ec50485704c7?ixlib=r
 
       &:hover .pic {
         filter: grayscale(0) blur(0px);
-      }
-
-      .pic {
-        filter: blur(5px);
       }
     }
 
