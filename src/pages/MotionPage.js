@@ -75,7 +75,7 @@ const Notification = () => {
 const BlackBox = styled.div`
   height: ${(props) => props.heightPercentage}%;
   width: 100%;
-  background: #000;
+  background: rgba(0, 0, 0, 0.8);
   transform-origin: ${(props) => props.xDirection} center;
 `
 
@@ -116,7 +116,7 @@ const ImageBoxAnimation = () => {
 
   useEffect(() => {
     let showAnimation = function () {
-      setTimeout(startNextAnimation, 500)
+      setTimeout(startNextAnimation, 200)
     }
 
     if (animationNumber >= 10) {

@@ -12,9 +12,9 @@ import styled from "styled-components"
 const StyledLink = styled(Link)`
   padding-left: 20px;
   padding-right: 20px;
-  color: black;
+  color: white;
   &:visited {
-    color: black;
+    color: white;
   }
   &:hover {
     opacity: 0.6;
@@ -32,7 +32,9 @@ const Nav = ({ children }) => {
           right: 0,
           height: "20px",
           padding: "20px",
-          backgroundColor: "rgba(0, 0, 0, 0.1)",
+          backgroundColor: "#171E31",
+
+          zIndex: 100,
         }}
       >
         <StyledLink to="/">Main</StyledLink>
