@@ -115,10 +115,14 @@ const ImageBoxAnimation = () => {
   }
 
   useEffect(() => {
-    setTimeout(startNextAnimation, 500)
-
-    return () => {
+    let showAnimation = function () {
       setTimeout(startNextAnimation, 500)
+    }
+
+    if (animationNumber >= 10) {
+      clearInterval(showAnimation)
+    } else {
+      showAnimation()
     }
   }, [animationNumber])
 
@@ -192,7 +196,7 @@ export default function MotionPage() {
     <>
       <Section>
         <Title>1. 카운팅</Title>
-        <Motion defaultStyle={{ x: 0 }} style={{ x: spring(10) }}>
+        <Motion defaultStyle={{ x: 0 }} style={{ x: spring(100) }}>
           {(value) => <div>{value.x}</div>}
         </Motion>
       </Section>
