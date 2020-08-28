@@ -198,15 +198,13 @@ export default function MotionPage() {
       </Section>
 
       <Section>
-        <Title>
-          2. <Notification />
-        </Title>
+        <Title>2. 알림</Title>
+        <Notification />
       </Section>
 
       <Section>
-        <Title>
-          3. <ImageBoxAnimation />
-        </Title>
+        <Title>3. 그림 전환</Title>
+        <ImageBoxAnimation />
       </Section>
     </>
   )
