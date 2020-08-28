@@ -107,28 +107,20 @@ const ImageBox = styled.div`
   background-size: cover;
   background-position: center;
 `
-export const useComponentWillMount = (func) => {
-  useMemo(func, [])
-  return func
-}
 const ImageBoxAnimation = () => {
   const [animationNumber, setAnimationNumber] = useState(1)
 
-  //   useComponentWillMount()
   const startNextAnimation = () => {
     setAnimationNumber(animationNumber + 1)
   }
 
-  useComponentWillMount(() => setTimeout(startNextAnimation, 500))
-  console.log({ animationNumber })
-  useComponentWillMount(() => setTimeout(startNextAnimation, 1000))
-  useComponentWillMount(() => setTimeout(startNextAnimation, 1500))
-  useComponentWillMount(() => setTimeout(startNextAnimation, 2000))
-  useComponentWillMount(() => setTimeout(startNextAnimation, 2500))
-  useComponentWillMount(() => setTimeout(startNextAnimation, 3000))
-  useComponentWillMount(() => setTimeout(startNextAnimation, 3500))
-  useComponentWillMount(() => setTimeout(startNextAnimation, 4000))
-  useComponentWillMount(() => setTimeout(startNextAnimation, 4500))
+  useEffect(() => {
+    setTimeout(startNextAnimation, 500)
+
+    return () => {
+      setTimeout(startNextAnimation, 500)
+    }
+  }, [animationNumber])
 
   return (
     <ImageBox>
