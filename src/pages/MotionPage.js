@@ -75,7 +75,7 @@ const Notification = () => {
 const BlackBox = styled.div`
   height: ${(props) => props.heightPercentage}%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   transform-origin: ${(props) => props.xDirection} center;
 `
 
