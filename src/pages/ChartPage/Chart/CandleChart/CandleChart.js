@@ -120,6 +120,7 @@ export default function CandleChart({ defaultData }) {
   const [currentData, setCurrentData] = useState([])
   const [count, setCount] = useState(0)
 
+  // 데이터 연동 부분 (단 1개의 데이터에 대해서만 캔들차트 적용)
   // useEffect(() => {
   //   if (defaultData) {
   //     let convertedData = []
@@ -135,6 +136,7 @@ export default function CandleChart({ defaultData }) {
   //   }
   // }, [])
 
+  // 데이터 비연동 부분 (settimeout을 이용하여 fakeData 띄우기 )
   useEffect(() => {
     let addData
     if (count < data.length) {
