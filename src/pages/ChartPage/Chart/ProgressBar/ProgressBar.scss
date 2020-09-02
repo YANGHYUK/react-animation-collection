@@ -1,0 +1,45 @@
+/*
+  *  PROGRESS BAR CONTAINER OF GAME
+  */
+
+.progress_bar_container {
+  position: relative;
+
+  height: 30px;
+
+  padding: 0 6px;
+
+  .progress_bar {
+    height: 30px;
+
+    border: 1px solid #17450f;
+    box-sizing: border-box;
+
+    transition: width 0.5s ease-in-out;
+    animation: progressbar-flow-animation 0.5s linear infinite;
+    background: #249218 url("../../../../images/progressbar_bg.png");
+  }
+
+  @keyframes progressbar-flow-animation {
+    from {
+      background-position: 15px 0;
+    }
+    to {
+      background-position: 0 0;
+    }
+  }
+
+  .time_remaining {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 30px;
+    width: 100%;
+
+    font-size: 12px;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+  }
+}

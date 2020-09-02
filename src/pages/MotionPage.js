@@ -16,7 +16,7 @@ const NotificationBox = styled.div`
   position: absolute;
   padding: 1.5em;
   left: 5%;
-  top: ${(props) => props.top}%;
+  top: ${(props) => props.top + 15}%;
   opacity: ${(props) => props.opacity};
   font-size: 0.8em;
   font-weight: bold;

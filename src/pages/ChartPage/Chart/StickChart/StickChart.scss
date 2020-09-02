@@ -1,0 +1,216 @@
+/*
+  *  STICK CHART CONTAINER OF GAME
+  */
+.stick_chart_container {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  .floating_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 165px;
+    > div {
+      position: absolute;
+      left: 32px;
+
+      height: 44px;
+      width: 100px;
+
+      padding-right: 14px;
+
+      font-size: 17px;
+      font-weight: bold;
+      line-height: 45px;
+      letter-spacing: 0.5px;
+      text-align: right;
+      text-shadow: 0 0 3px #111;
+      color: #9e755f;
+    }
+
+    > .red {
+      top: 23px;
+      font-size: 15px;
+    }
+
+    > .gray {
+      top: 103px;
+      font-size: 15px;
+    }
+    > .blue {
+      top: 183px;
+      font-size: 15px;
+    }
+  }
+}
+
+/* high, low line */
+.stick_chart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+
+  .line_chart {
+    position: absolute;
+    top: 0;
+    left: -1px;
+    height: 0;
+    width: 2px;
+    div {
+      position: absolute;
+      left: 0;
+
+      height: 0;
+      width: 2px;
+      max-height: 112px !important;
+
+      transition: height 0.5s;
+    }
+
+    .up {
+      bottom: 0;
+    }
+
+    .down {
+      top: 0;
+    }
+  }
+
+  /* candle */
+  .thick_line_chart {
+    position: absolute;
+    left: -10px;
+
+    width: 20px;
+    max-height: 112px !important;
+
+    background: url("../../../../images/candle_bg.png");
+    animation: candle-flow-animation 0.5s linear infinite;
+    transition: height 0.5s ease-in-out;
+
+    z-index: 5;
+  }
+  @keyframes candle-flow-animation {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 0 12px;
+    }
+  }
+
+  /* status box */
+  .status_position_line {
+    position: absolute;
+    left: 20px;
+
+    height: 2px;
+    width: 40px;
+
+    transition: top 0.5s, bottom 0.5s;
+
+    z-index: 1;
+  }
+
+  .status_box {
+    position: absolute;
+    top: -19px;
+    left: 40px;
+
+    height: 34px;
+    width: 110px;
+
+    border: 3px solid #634234;
+    border-radius: 19px;
+
+    line-height: 35px;
+    text-align: center;
+
+    color: #fff;
+    background-color: #73503c;
+
+    transition: top 0.2s ease-in-out, bottom 0.2s ease-in-out;
+
+    z-index: 2;
+
+    span {
+      float: right;
+
+      padding-right: 11px;
+
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 0 3px #111;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .status_box::before {
+    float: left;
+    content: "";
+    margin: 7px 0 0 8px;
+    width: 25px;
+    height: 19px;
+    background: url("../../../../images/ui_game/sp_fx.png") no-repeat 0 -100px;
+  }
+
+  &.up {
+    .line_chart {
+      div {
+        background-color: #e42828;
+      }
+    }
+    .thick_line_chart {
+      bottom: 0;
+      background-color: #e42828;
+      &.hidden {
+        visibility: hidden;
+      }
+    }
+    .status_position_line {
+      top: 0;
+      background-color: #e42828;
+    }
+    .status_box {
+      top: -19px;
+      bottom: initial;
+      border-color: #e42828;
+      span {
+        color: #ef9e9e;
+      }
+    }
+    .status_box::before {
+      background-position: -60px -100px;
+    }
+  }
+  &.down {
+    .line_chart {
+      div {
+        background-color: #106de1;
+      }
+    }
+    .thick_line_chart {
+      top: 0;
+      background-color: #106de1;
+    }
+    .status_position_line {
+      bottom: 0;
+      background-color: #106de1;
+    }
+    .status_box {
+      top: initial;
+      bottom: -19px;
+      border-color: #106de1;
+      span {
+        color: #a5c8f4;
+      }
+    }
+  }
+}
