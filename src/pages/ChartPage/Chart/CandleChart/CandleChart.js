@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import Chart from "react-google-charts"
 
 const customToolTip = (
@@ -11,7 +11,11 @@ const customToolTip = (
   return `<table style="position:relative; background-color:none;"><tbody style="position:absolute;  background-color:#583E2F; border: solid 2px #2D2B29; border-radius:5px; width:107px; margin-left:-20px; text-align:center; "}}>
   <tr style="background-color:#3E352C; width:100%; color:white; ">
   <td colspan="5" style="text-align:center;">${
-    new Date().getHours() + ":" + new Date().getMinutes()
+    new Date().getHours() +
+    ":" +
+    (new Date().getMinutes() >= 10
+      ? new Date().getMinutes()
+      : "0" + new Date().getMinutes())
   }</td>
   </tr>
   <tr style="color:#FEDD9E; opacity:0.8;">
@@ -150,9 +154,14 @@ export default function CandleChart({ defaultData }) {
     }
   }, [count, currentData])
 
+  const cli = useRef(null)
+  // var cli = chart.getChartLayoutInterface();
+  console.log(cli.current)
+
   return (
     <div>
       <Chart
+        ref={cli}
         width="100%"
         chartType="CandlestickChart"
         loader={

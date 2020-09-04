@@ -33,6 +33,12 @@
     > .red {
       top: 23px;
       font-size: 15px;
+      &.active {
+        border-color: #e42828;
+        > span {
+          color: #e42828;
+        }
+      }
     }
 
     > .gray {
@@ -42,6 +48,12 @@
     > .blue {
       top: 183px;
       font-size: 15px;
+      &.active {
+        border-color: #106de1;
+        > span {
+          color: #106de1;
+        }
+      }
     }
   }
 }

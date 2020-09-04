@@ -126,13 +126,13 @@ export default function StickChart({ defaultData }) {
   return (
     <div className="stick_chart_container">
       <div className="floating_container">
-        <div className="red">
+        <div className={`red ${statusBoxText === redText && "active"}`}>
           <span>{redText}</span>
         </div>
         <div className="gray">
           <span>{grayText}</span>
         </div>
-        <div className="blue">
+        <div className={`blue ${statusBoxText === blueText && "active"}`}>
           <span>{blueText}</span>
         </div>
       </div>
