@@ -1,0 +1,24 @@
+.circleRotate-style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .path {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: gold;
+    text-align: center;
+    animation: spin 2s infinite linear backwards;
+  }
+  .avatar {
+    width: 50px;
+    transform: 50% 150px;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(-0.5turn);
+    }
+  }
+}

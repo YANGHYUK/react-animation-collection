@@ -1,13 +1,14 @@
-import React from "react"
+import React from "react";
 
-import { BrowserRouter, Switch, Route, Redirect, Link } from "react-router-dom"
-import FadePage from "./pages/FadePage"
-import MainPage from "./pages/MainPage"
-import ChartPage from "./pages/ChartPage"
-import MotionPage from "./pages/MotionPage"
-import HoverPage from "./pages/HoverPage"
+import { BrowserRouter, Switch, Route, Redirect, Link } from "react-router-dom";
+import FadePage from "./pages/FadePage";
+import MainPage from "./pages/MainPage";
+import ChartPage from "./pages/ChartPage";
+import MotionPage from "./pages/MotionPage";
+import HoverPage from "./pages/HoverPage";
+import CircleRotatePage from "./pages/CircleRotatePage";
 
-import styled from "styled-components"
+import styled from "styled-components";
 
 const StyledLink = styled(Link)`
   padding-left: 20px;
@@ -19,7 +20,7 @@ const StyledLink = styled(Link)`
   &:hover {
     opacity: 0.6;
   }
-`
+`;
 
 const Nav = ({ children }) => {
   return (
@@ -42,11 +43,12 @@ const Nav = ({ children }) => {
         <StyledLink to="/chart">chart Animation</StyledLink>
         <StyledLink to="/motion">Motion Animation</StyledLink>
         <StyledLink to="/hover">Hover Animation</StyledLink>
+        <StyledLink to="/circlerotate">CircleRotate Animation</StyledLink>
       </div>
       <div style={{ padding: "100px" }}>{children}</div>
     </div>
-  )
-}
+  );
+};
 
 function App() {
   return (
@@ -100,11 +102,20 @@ function App() {
             </Nav>
           )}
         />
+        <Route
+          path="/circlerotate"
+          exact
+          component={() => (
+            <Nav>
+              <CircleRotatePage />
+            </Nav>
+          )}
+        />
 
         <Redirect path="*" to="/" />
       </Switch>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
