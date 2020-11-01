@@ -2,23 +2,155 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 
+  .title {
+    margin: 20px;
+    width: 100%;
+  }
+  .balls1 {
+    position: absolute;
+    top: 200px;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    z-index: 1;
+    animation: tremble1 0.7s infinite linear alternate;
+  }
+
+  .balls2 {
+    position: absolute;
+    top: 235px;
+    background-color: green;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    z-index: 1;
+    animation: tremble2 0.4s infinite linear alternate;
+  }
+  .balls3 {
+    position: absolute;
+    top: 195px;
+    background-color: blue;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    z-index: 1;
+    animation: tremble3 0.5s infinite linear alternate;
+  }
+  .balls4 {
+    position: absolute;
+    top: 175px;
+    background-color: purple;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    z-index: 1;
+    animation: tremble2 0.3s infinite linear alternate;
+  }
+  .balls5 {
+    position: absolute;
+    top: 200px;
+    background-color: hotpink;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    z-index: 1;
+    animation: tremble4 0.5s infinite linear alternate;
+  }
   .path {
+    position: absolute;
     width: 300px;
     height: 300px;
     border-radius: 50%;
     background-color: gold;
     text-align: center;
-    animation: spin 2s infinite linear backwards;
+    animation: spin 2.01s infinite linear backwards;
   }
   .avatar {
     width: 50px;
     transform: 50% 150px;
+  }
+  .number {
+    position: absolute;
+    top: 350px;
   }
 
   @keyframes spin {
     to {
       transform: rotate(-0.5turn);
     }
+  }
+
+  @keyframes tremble1 {
+    0% {
+      margin-left: 0;
+      margin-top: 0;
+    }
+    50% {
+      margin-left: -20px;
+      margin-top: -20px;
+    }
+    100% {
+      margin-left: 20px;
+      margin-top: 20px;
+    }
+    // to {
+
+    // }
+  }
+  @keyframes tremble2 {
+    0% {
+      margin-left: 0;
+      margin-top: 0;
+    }
+    50% {
+      margin-left: -20px;
+      margin-top: -20px;
+    }
+    100% {
+      margin-left: 20px;
+      margin-top: 20px;
+    }
+    // to {
+
+    // }
+  }
+
+  @keyframes tremble3 {
+    0% {
+      margin-left: 0;
+      margin-top: 0;
+    }
+    50% {
+      margin-left: -40px;
+      margin-top: -40px;
+    }
+    100% {
+      margin-left: 15px;
+      margin-top: 15px;
+    }
+    // to {
+
+    // }
+  }
+  @keyframes tremble4 {
+    0% {
+      margin-left: 0;
+      margin-top: 0;
+    }
+
+    50% {
+      margin-right: 15px;
+      margin-top: 15px;
+    }
+    100% {
+      margin-right: -40px;
+      margin-top: -40px;
+    }
+    // to {
+
+    // }
   }
 }

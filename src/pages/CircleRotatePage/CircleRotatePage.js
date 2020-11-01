@@ -27,7 +27,13 @@ export default function CircleRotatePage() {
   console.log({ count2 });
   return (
     <div className="circleRotate-style">
-      Circle Rotate Page
+      <div className="title">Circle Rotate Page</div>
+      <div className="balls1">balls</div>
+      <div className="balls2">balls</div>
+      <div className="balls3">balls</div>
+      <div className="balls4">balls</div>
+      <div className="balls5">balls</div>
+
       <div className="path">
         {count === 1 && <img src={Avatar} alt="Avatar" className="avatar" />}
         {count === 2 && <img src={Avatar} alt="Avatar" className="avatar" />}
@@ -35,7 +41,7 @@ export default function CircleRotatePage() {
         {count === 4 && <img src={Avatar} alt="Avatar" className="avatar" />}
         {count === 5 && <img src={Avatar} alt="Avatar" className="avatar" />}
       </div>
-      <div>
+      <div className="number">
         {count2 > 1 && <span>1</span>}
         {count2 > 2 && <span>2</span>}
         {count2 > 3 && <span>3</span>}
